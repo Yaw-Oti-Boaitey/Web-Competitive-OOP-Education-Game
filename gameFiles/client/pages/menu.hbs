@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Menu screen</title>
+    <link rel="stylesheet" href="../style/menustyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class = "mainnav">
+        {{#if isAuthenticated}}
+        <h3>{{user.username}}</h3>
+        {{else}}
+        <h3></h3>
+        {{/if}}
+        <ul>
+            <li><a href="/">Home</a></li>
+            {{#if isAuthenticated}}
+            <li><a href="/leaderboard">Leaderboard</a></li>
+            <li><a href="/logout">Logout</a></li>
+            {{else}}
+            <li><a href="/login">Log in</a></li>
+            <li><a href="/register">Sign Up</a></li>
+            {{/if}}
+
+        </ul>
+    </nav>
+
+    <div class="main-container row mt-5 justify-content-center">
+
+        <div class="card" style="width: 60rem;">
+            <h2 class="card-title text-center">Object-Oriented Programming Quiz Game</h2>
+            <h6 class="card-subtitle mb-2 text-muted text-center">Select a button</h6>
+            <div class="card-body d-flex justify-content-between">
+
+                {{#if isAuthenticated}}
+                <a href="/game" class="btn btn-primary">Play Game<br><small>Answer questions in a competitive environment</small></a>
+                <a href="/leaderboard" class="btn btn-primary">Leaderboard<br><small>View your game scores</small></a>
+                {{else}}
+                <a href="/login" class="btn btn-primary">Log In<br><small>Log into your account</small></a>
+                <a href="/register" class="btn btn-primary">Sign Up<br><small>Create an account for gameplay</small></a>
+                {{/if}}
+                <a href="/tutorial" class="btn btn-primary">About<br><small>Learn how to navigate the website and play the game</small></a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

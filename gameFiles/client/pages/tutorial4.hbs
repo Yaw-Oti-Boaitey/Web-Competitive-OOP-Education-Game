@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Game Setup Tutorial</title>
+    <link rel="stylesheet" href="../style/menustyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="mainnav">
+        <h3 id="player-username">{{username}}</h3>
+        <ul>
+            <li><a href="/">Back to Main Menu</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-container row mt-5 justify-content-center">
+
+        <div class="card" style="width: 75rem">
+            <h2 class="card-title  text-center">Game Setup Tutorial</h2>
+            <div class="card-body">
+
+                <p>When you click on “Play Game”, you will be redirected to the “Game” page.</p>
+                <p>The first thing you will see is the "Question Type" menu. This is where you decide what topic you
+                    want the questions of the game you will play to be based on.</p>
+                <p>There are three question types to choose from: </p>
+                <ul>
+                    <li>General Object-Oriented Programming Concepts</li>
+                    <li>Java</li>
+                    <li>Python</li>
+                </ul>
+                <p>You will need a total score of 2000 before you can select "Java" and 4000 before you can select
+                    "Python".</p>
+                <p>The total score is the sum of all the scores from all the games you have played.</p>
+
+                <img class="justify-content-center" src="../img/QuestionTypeMenuImage.jpg" alt="question-type-tutorial">
+
+                <p>1. The "Current Total Score" for the player</p>
+                <p>2. A "Question type" option</p>
+                <br>
+
+                <p>When an option has been selected, you will be taken to the "Room” page.</p>
+                <p>Here, players are required to select</p>
+                <ul>
+                    <li>Create Room</li>
+                    <li>Quick Play</li>
+                    <li>Join Room</li>
+                </ul>
+
+                <img class="justify-content-center" src="../img/RoomsPageImage.jpg" alt="room-type-tutorial">
+
+                <p>1. The "Create Room" button. Selecting this makes you the host of either an "Open" room or a "Closed" room(Selecting which room you want to create is available after clicking this button). As the host, you initiate the game</p>
+                <p>2. The "Quick Play" button. Selecting this will put you into a random "Open" room. If there are none available, you will be alerted</p>
+                <p>3. The "Join Room" button. Selecting this will take you to the "Join Room" page, where you have to input the code of the room you would like to join.</p>
+                <p>4. The "Back" button. Pressing this will take you back to the "Question Type" page</p>
+
+                <div class="d-flex justify-content-between">
+                    <a class="btn btn-outline-info" href="/tutorial3">Game Setup Tutorial</a>
+                    <a class="btn btn-outline-info" href="/tutorial5">Game Tutorial</a>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

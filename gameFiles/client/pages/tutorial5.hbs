@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Game Tutorial</title>
+    <link rel="stylesheet" href="../style/menustyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="mainnav">
+        <h3 id="player-username">{{username}}</h3>
+        <ul>
+            <li><a href="/">Back to Main Menu</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-container row mt-5 justify-content-center">
+
+        <div class="card" style="width: 60rem">
+            <h2 class="card-title text-center">Game Tutorial</h2>
+            <div class="card-body">
+                <p>Players are presented with a question and they will have 20 seconds to answer. Players select an
+                    answer and if they are certain of it, they can lock it in.</p>
+                <p>If players answer the question correctly, they will receive 100 points and extra points, based on how
+                    fast they answered the question.</p>
+                <br>
+                <p class="font-weight-bold">AFTER EVERY SECOND, 5 POINTS ARE DEDUCTED FROM A TOTAL OF 100 EXTRA POINTS A
+                    PLAYER CAN RECEIVE</p>
+                <p>(20 seconds = 100 extra points, 18 seconds = 90 extra points, 10 seconds = 50 extra points, etc)</p>
+                <br>
+                <p>After a set of 10 questions, the final scores for each player are displayed.</p>
+                <br>
+                <img class="justify-content-center" src="../img/tutorialimage.jpg" alt="tutorial-image">
+                <p>1. All players in the current room are shown at the top of the game page. When a person has answered,
+                    their name gets highlighted on everyone's screen.</p>
+                <p>2. Players click on one of the answer options presented. As long as the player doesn't select "Lock",
+                    the player can change their selection.</p>
+                <p>3. When a player has selected one of the answers, they click "Lock" to confirm their choice. When
+                    everyone has answered. The answer selection
+                    will become green if correct, and red if it is wrong. After a few seconds the next question is
+                    presented.</p>
+                <p>4. Players have a time limit to answer their questions in. If time runs out and people have not
+                    selected an answer, those people will automatically get the answer wrong. A player's score will also
+                    be influenced by how fast they
+                    selected the correct answer.</p>
+
+
+                <div class="d-flex justify-content-between">
+                    <a class="btn btn-outline-info" href="/tutorial4">Game Setup Tutorial</a>
+                    <a class="btn btn-outline-info" href="/tutorial6">Leaderboard</a>
+                </div>
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+.container{
+    min-width: 30%;
+    min-height: 20%;
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.btn-grid{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+}
+
+.correct{
+    background: green;
+    color: aliceblue;
+}
+
+.wrong{
+    background: red;
+    color: aliceblue;
+}
+
+.selected{
+    border: 5px solid rgb(68, 160, 186);
+}
+
+.locked{
+    background: gold;
+    color: black;
+}
+.game-nav{
+    background-color: rgb(37, 116, 177);
+    color: rgb(255, 255, 255);
+    display: flex;
+    padding: 30px;
+    justify-content: space-between;
+}
+
+.game-nav ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.game-nav li{
+    list-style: none;
+}
+
+.game-nav li a{
+    color: rgb(194, 194, 228);
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.mainnav{
+    background-color: rgb(63, 16, 157);
+    color: rgb(255, 255, 255);
+    display: flex;
+    padding: 30px;
+    justify-content: space-between;
+}
+
+.mainnav ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.mainnav li{
+    list-style: none;
+}
+
+.mainnav li a{
+    color: rgb(194, 194, 228);
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.mainnav li a:hover{
+    color: yellow;
+}
+
+.game-timer-container{
+    display: flex;
+    justify-content: end;
+}
+
+.total-score-container{
+    display: flex;
+    justify-content: center;
+}

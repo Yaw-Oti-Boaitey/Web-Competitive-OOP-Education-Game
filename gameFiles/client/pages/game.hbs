@@ -1,0 +1,188 @@
+<!--This is the Game Page HTML file-->
+
+<!DOCTYPE html>
+
+<head>
+    <title>Game Page</title>
+    <link rel="stylesheet" href="style/gameStyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+</head>
+
+<body onload='getTotalScore()'>
+
+    <!--Main menu navbar-->
+    <nav class="mainnav">
+        <h3 id="player-username">{{username}}</h3>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/leaderboard">Leaderboard</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!--In-game players bar-->
+    <nav id='players-bar' style="display: none" class="game-nav">
+        <ul id="room-players-list">
+
+        </ul>
+    </nav>
+
+    
+
+
+    <div class="row mt-5 justify-content-center align-items-center">
+
+        <div class="card text-center" style="width: 60rem">
+
+            <!--Question Type Page-->
+            <div id="question-type" class="card-body">
+                <h3 class="card-title">Question Type</h3>
+                <h6 class="card-subtitle mb-2 text-muted">Choose the type of questions you want to be asked</h6>
+                <br>
+
+                <div class = "total-score-container">
+                    <p>Current Score: </p>
+                    <p id="player-total-score" class = "font-weight-bold">Loading</p>
+                </div>
+
+                <button id="oop-btn" class="btn btn-outline-primary">General Object-Oriented Programming Concepts</button>
+                <button id="java-btn" class="btn btn-outline-primary">Java<br /><small>Score Requirement: 2000</small></button>
+                <button id="python-btn" class="btn btn-outline-primary">Python<br /><small>Score Requirement: 4000</small></button>
+            </div>
+
+            <!--Main Menu-->
+            <div id="main-menu" class="card-body" style="display: none">
+                <button id="main-menu-btm" class="btn btn-outline-primary btn-sm d-flex justify-content-start">Back</button>
+                <h3 class="card-title">Rooms</h3>
+                <h6 class="card-subtitle mb-2 text-muted">Select an option</h6>
+
+                <button id="create-room-btn" class="btn btn-outline-primary">Create
+                    Room</button>
+                <button id="quick-play-btn" class="btn btn-outline-primary">Quick Play</button>
+                <button id="join-room-btn" class="btn btn-outline-primary">Join Room</button>
+            </div>
+
+            <!--Join Room Menu-->
+            <div id="join-specific-room" class="card-body" style="display: none">
+                <button id="joinroom-btm" class="btn btn-outline-primary btn-sm d-flex justify-content-start">Back</button>
+                <h3 class="card-title">Join Room</h3>
+                <h6 class="card-subtitle mb-2 text-muted">Type in the room code of the room you want to join</h6>
+
+                <label for="room-code">Room Code</label>
+                <input type="text" id="room-code">
+
+                <button class="btn btn-outline-primary" onclick="checkAvailability()">Search</button>
+            </div>
+
+            <!--Room Type Menu-->
+            <div id="room-type" class="card-body" style="display: none">
+                <button id="roomtype-btm" class="btn btn-outline-primary btn-sm d-flex justify-content-start">Back</button>
+                <h3 class="card-title">Room Type</h3>
+                <h6 class="card-subtitle mb-2 text-muted">What type of room would you like to create?</h6>
+
+                <button class="btn btn-outline-primary" onclick="createRoom()">Open Room<br /><small>Can be joined by
+                        anyone</small></button>
+                <button class="btn btn-outline-primary" onclick="createClosedRoom()">Closed Room<br /><small>Can only be
+                        joined by people with the code</small></button>
+            </div>
+
+            <!--Lobby Room-->
+            <div id="game-lobby" class="card-body" style="display: none">
+                <button id = "leave-room" class="btn btn-outline-primary btn-sm d-flex justify-content-start">Leave Room</button>
+                <h2 class="card-title">Lobby</h2>
+                <br>
+
+                <h5>The room code is</h5>
+                <h3 id="room-code-display" class="font-weight-bold"></h3>
+                <br>
+
+                <h5>Players</h5>
+                <ul id="players-list" class="list-group">
+
+                </ul>
+
+                <button id="game-start-button" class="btn btn-outline-primary" style="display: none"
+                    onclick="requestGameStart()">Start Game</button>
+            </div>
+
+            <!--Start Game Countdown-->
+            <div class="container" id='countdown' class="card-body" style="display: none">
+                <h2 id="timer"></h2>
+            </div>
+
+            <!--Game Interface-->
+            <div class='container' id='game-container' class="card-body" style="display: none">
+
+                <h2 id='question'>Question</h2>
+                <div class = "game-timer-container">
+                    <div>Time: </div>
+                    <div id = 'gameTimer' class ='justify-content-end'>20</div>
+                </div>
+                
+                <br>
+
+                <div id="answer-buttons" class="btn-grid">
+
+                </div>
+
+                <br>
+
+                <div class="btn" class="lock-button">
+                    <p id="lock-reminder" style="display: none">Select an answer first</p>
+                    <button id="lock-button" class="btn btn-outline-secondary" onclick="lockAnswer()">Lock</button>
+                </div>
+
+                <div id="nq-alert-container" style="display: none">
+                    <p>Next question will be displayed in</p>
+                    <p id="nq-timer"></p>
+                </div>
+
+            </div>
+
+            <!--Score Page-->
+            <div id='score-screen' class="card-body" style="display: none">
+
+                <h3 class="card-title">Final Scores</h3>
+                <table id='playerScoresTable' class="table table-responsive" style="width: 100">
+                    <thead>
+                        <tr>
+                            <th scope="col">Username</th>
+                            <th scope="col">Score</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id='score-table-body'>
+
+                    </tbody>
+
+                </table>
+
+                <button id='back-to-menu' class="btn btn-outline-primary" onclick="backToStart()">Back to "Question Type" Page</button>
+                <a class = "btn btn-outline-primary" href="/">Back to Main Menu</a></li>
+                <a class = "btn btn-outline-primary" href="/leaderboard">Leaderboard</a></li>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../src/socketHandling.js"></script>
+    <script src="../src/gameElements.js"></script>
+    <script src="../src/game.js"></script>
+
+
+</body>
+
+</html>
