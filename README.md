@@ -71,6 +71,7 @@ FLUSH PRIVILEGES;
 
 [NOTE: You can change the 'username' and 'password' to anything you want. For the purpose of this README, we will be using those values]
 
+.
 
 
 ii) Open the .env file(You can use a text editor) and change the details currently there:
