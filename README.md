@@ -1,11 +1,14 @@
 # Object-Oriented Programming Quiz Game
 
-This is a quiz game that tests players on their object-oriented programming knowledge. This knowledge includes 'General Object-Oriented Programming concepts', 'Java' and 'Python'
+This is a quiz game that tests players on their object-oriented programming knowledge. This includes 'General Object-Oriented Programming concepts' questions, 'Java' questions and 'Python' questions
 
 ## Installation
-IMPORTANT: Setting up the system must be done on a Windows system, though it is possible to do on a MAC or a Linux machine.
+[IMPORTANT: It is preferred that you run this on a WINDOWS system, as it was thoroughly tested on one. However, it is possible to run it on MAC/LINUX systems]
 
-"Node.js" and a "MySQL" server are required to run this system effectively: "Node.js" creates the server holding the website, and MySQL holds the database. This program was tested with the application "XAMPP", which hosts the server holding the MySQL database, so that is the application that will be elaborated on later.
+"Node.js" and a "MySQL" server are required to run this system effectively: "Node.js" creates the server holding the website, and MySQL holds the database. 
+
+This program was tested with the application "XAMPP", which hosts the server holding the MySQL database, so that is the application thoroughly talked about.
+
 The computer must hold a stable internet connection, so all the bootstrap templates work correctly.
 
 "Node.js" can be downloaded for Windows and Mac from the following website: https://nodejs.org/en/download/
@@ -17,7 +20,7 @@ The computer must hold a stable internet connection, so all the bootstrap templa
 To run the website, the NodeJS and the XAMPP servers needs to be set up and running.
 
 ## Setting up XAMPP
-i)During XAMPP installation, in "Select Components", leave the default selections and continue("MYSQL" should be selected).
+i) During XAMPP installation, in "Select Components", leave the default selections and continue("MYSQL" should be selected).
 
 ii) In the XAMPP Control Panel, press "Start" for both "Apache" and "MySQL". After both turn green, select "Admin" for MySQL. A new browser window/tab will appear.
 In the browser window that opens, in the menu on the leftside of the page, select "New", give the database the name 'quiz_database' and press "Create".
@@ -29,19 +32,18 @@ The game questions and some sample user accounts for testing have now been impor
 [NOTE: The .env file in 'main' holds the database connection settings necessary for connectivity. Currently it has been configured to be using the default values when XAMPP has been downloaded for the first time]
 
 ## Setting up NodeJS
-To run the Node server, in the command line, navigate to the location of the main folder(e.g. cd C:\main) and type in 
+To run the Node server, open a command line window, navigate to the location of the main folder(e.g. cd C:\main) and type in 
 ```
 npm run dev
 ```
-or you can type in this instead
+You can also choose to type in
 ```
 npm run start
 ```
 
-When the messages "Server started on port 8080" and "MySQL Connected..." appear, the website can now be accessed.
+When the messages "Server started on port 8080" and "MySQL Connected..." appears, the website can now be accessed in any browser.
 
-On the localhost machine(the machine running the Node and MySQL servers), you can get to the page by typing
-localhost:8080
+On the localhost machine(the machine running the Node and MySQL servers), you can get to the page by typing "localhost:8080" in any browser's search bar
 
 For other computers to have access to the game, in any browser search bar, they must input the following into a browser search bar:
 http://<LOCAL.HOSTS.IP.ADDRESS>:8080/ (e.g. http://192.168.0.3:8080)
@@ -51,7 +53,9 @@ http://<LOCAL.HOSTS.IP.ADDRESS>:8080/ (e.g. http://192.168.0.3:8080)
 ## Issues with running the NodeJS server
 If you encounter an issue that causes an error to appear instead of the "MySQL Connected..." message, you may need to make some changes to XAMPP and the .env file located in the 'main' folder.
 
-i) Select "Admin" for MySQL in the XAMPP control panel. On the page, click on the "SQL" header and enter this information:
+i) Firstly, we create a new user with all database privileges.
+
+Select "Admin" for MySQL in the XAMPP control panel. On the page, click on the "SQL" header and enter this information:
 
 CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
 
@@ -66,6 +70,7 @@ FLUSH PRIVILEGES;
 [NOTE: Both the '.' symbols have asterisks around them]
 
 [NOTE: You can change the 'username' and 'password' to anything you want. For the purpose of this README, we will be using those values]
+
 
 ii) Open the .env file(You can use a text editor) and change the details currently there:
 
