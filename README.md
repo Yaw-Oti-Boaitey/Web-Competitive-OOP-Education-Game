@@ -3,7 +3,7 @@
 This is a quiz game that tests players on their object-oriented programming knowledge. This includes 'General Object-Oriented Programming concepts' questions, 'Java' questions and 'Python' questions
 
 ## Installation
-[IMPORTANT: It is preferred that you run this on a WINDOWS system, as it was thoroughly tested on one. However, it is possible to run it on MAC/LINUX systems]
+IMPORTANT: It is preferred that you run this on a WINDOWS system, as it was thoroughly tested on one. However, it is possible to run it on MAC/LINUX systems
 
 "Node.js" and a "MySQL" server are required to run this system effectively: "Node.js" creates the server holding the website, and MySQL holds the database. 
 
