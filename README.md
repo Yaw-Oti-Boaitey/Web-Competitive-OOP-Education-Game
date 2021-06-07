@@ -25,7 +25,7 @@ i) During XAMPP installation, in "Select Components", leave the default selectio
 ii) In the XAMPP Control Panel, press "Start" for both "Apache" and "MySQL". After both turn green, select "Admin" for MySQL. A new browser window/tab will appear.
 In the browser window that opens, in the menu on the leftside of the page, select "New", give the database the name 'quiz_database' and press "Create".
 
-iii) Select the new database, select "Import" from the tabs list and under "File to import", click "Browse" and select the "quiz_database.sql" file located inside the 'main' folder of this project.
+iii) Select the new database, select "Import" from the tabs list and under "File to import", click "Browse" and select the "quiz_database.sql" file located inside the 'gameFiles' folder of this project.
 
 The game questions and some sample user accounts for testing have now been imported.
 
