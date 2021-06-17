@@ -85,7 +85,9 @@ c. Change DATABASE_PASSWORD to password.
 Now everything should work. To access the website, you will need to type "localhost:8080" into the search bar.
 
 ## Usage
-The website hosts a competitive quiz game. This game is meant to assess players on their Object-Oriented programming knowledge, as well as their 'Java' and 'Python' knowledge.
+The website hosts a competitive quiz game. This game is meant to assess players on their general Object-Oriented programming knowledge, along with their 'Java' and 'Python' knowledge. 
+
+Players will have to create an account on the website before they can play. This account is not only used for playing the game, but also enables players to see all the scores they received from all their game sessions.
 
 The game is played with 2-8 people as they answer 10 sets of questions and try to get the highest score in the room. Each question will have 2 or 4 answer options that players can choose from. 
 After selecting an answer option, the player can lock it in to confirm it. Once everyone has answered, or after 20 seconds have passed, the answer selected will be highlighted with a colour, with a green answer being the correct one, and the red answer being the wrong one.
